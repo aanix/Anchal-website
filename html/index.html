@@ -105,7 +105,7 @@
     <!--  Banner Section -->
     <section class="banner-section position-relative d-flex align-items-end min-vh-100">
       <video class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" autoplay muted loop playsinline>
-        <source src="../assets/images/backgrounds/banner-video.mp4" type="video/mp4" />
+          <source id="banner-video-source" src="../assets/images/backgrounds/videos/anime.mp4" type="video/mp4" />
       </video>
       <div class="container">
         <div class="d-flex flex-column gap-4 pb-8 position-relative z-1">
@@ -113,7 +113,7 @@
             <div class="col-xl-4">
               <div class="d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100"
                 data-aos-duration="1000">
-                <img src="../assets/images/svgs/primary-leaf.svg" alt="" class="img-fluid animate-spin">
+                <img src="../assets/images/backgrounds/data-gate-wallpaperwaves-com.mp4" alt="" class="img-fluid animate-spin">
                 <p class="mb-0 text-white fs-5 text-opacity-70">We create <span
                     class="text-primary">high-performing</span> digital designs that elevate brands and enhance
                   conversions.</p>
@@ -1363,6 +1363,24 @@
    class="link-hover hstack gap-3 text-white fs-5">
   <iconify-icon icon="lucide:mail" class="fs-7 text-primary"></iconify-icon>
   <span>anchalradiant@gmail.com</span>
+  <script>
+    // List of video filenames in the videos folder
+    const videos = [
+      'anime.mp4',
+      'cube.mp4',
+      'space.mp4',
+      'gaming.mp4'
+    ];
+    // Pick a random video
+    const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+    // Set the source of the banner video
+    const videoSource = document.getElementById('banner-video-source');
+    if (videoSource) {
+      videoSource.src = `../assets/images/backgrounds/videos/${randomVideo}`;
+      // Reload the video to play the new source
+      videoSource.parentElement.load();
+    }
+  </script>
 </a>
 
               
